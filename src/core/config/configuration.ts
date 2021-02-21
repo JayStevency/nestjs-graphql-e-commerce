@@ -24,6 +24,10 @@ export default () => {
         logging: JSON.parse(data.DATABASE_LOGGING),
       },
       secret: data.SECRET,
+      jwt: {
+        accessTokenTime: data.ACCESS_TOKEN_TIME,
+        refreshTokenTime: data.REFRESH_TOKEN_TIME
+      }
     }   
   } catch (error) {
     console.error(error)

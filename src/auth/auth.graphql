@@ -1,0 +1,11 @@
+type Token {
+  accessToken: String
+  refreshToken: String
+}
+
+type Mutation {
+  login(email: String!, password: String!): Token
+  getAccessToken: Token
+  revokeAccessToken: Boolean
+  revokeRefreshToken: Boolean
+}

@@ -1,0 +1,12 @@
+type Member {
+  id: Int
+  name: String
+  email: String
+  phoneNumber: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type Query {
+  me: Member
+}

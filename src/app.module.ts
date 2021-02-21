@@ -7,9 +7,16 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmConfig } from './core/config/typeorm.config';
+import { AuthModule } from './auth/auth.module';
+import { MemberModule } from './components/member/member.module';
+import configuration from './core/config/configuration';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [configuration]
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useClass: TypeOrmConfig
@@ -28,6 +35,8 @@ import { TypeOrmConfig } from './core/config/typeorm.config';
       playground: true,
       debug: true
     }),
+    AuthModule,
+    MemberModule,
   ],
   controllers: [AppController],
   providers: [AppService],

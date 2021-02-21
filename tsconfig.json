@@ -5,11 +5,16 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@ecommerce/*": ["src/*"],
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

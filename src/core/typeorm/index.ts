@@ -1,0 +1,1 @@
+export { DefaultEntity } from './default.entity';
