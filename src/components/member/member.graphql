@@ -7,6 +7,15 @@ type Member {
   updatedAt: DateTime
 }
 
+type Mutation {
+  signUp(
+    name: String
+    email: String
+    phoneNumber: String
+    password: String
+  ) : Token
+}
+
 type Query {
   me: Member
 }
