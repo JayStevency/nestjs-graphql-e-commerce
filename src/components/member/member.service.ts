@@ -1,7 +1,7 @@
 import { AuthService } from '@ecommerce/auth/auth.service';
 import { forwardRef, HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
-import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
 import { Transactional } from 'typeorm-transactional-cls-hooked';
+import { MeConverter } from './converter';
 import { SignUpArgs } from './dto';
 import { MemberRepository } from './repositories';
 
@@ -9,7 +9,8 @@ import { MemberRepository } from './repositories';
 export class MemberService {
   constructor(
     private memberRepository: MemberRepository,
-    @Inject(forwardRef(() => AuthService)) private authService: AuthService
+    @Inject(forwardRef(() => AuthService)) private authService: AuthService,
+    private meConverter: MeConverter
   ) {}
 
   @Transactional()
@@ -39,5 +40,9 @@ export class MemberService {
       console.error(error)
       throw error;
     }
+  }
+
+  async me(memberId: number) {
+    return await this.meConverter.convert(await this.memberRepository.findById(memberId));
   }
 }

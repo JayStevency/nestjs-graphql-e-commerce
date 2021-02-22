@@ -1,4 +1,7 @@
-import { Args, Mutation, Resolver } from '@nestjs/graphql';
+import { AccessAuthGuard } from '@ecommerce/auth/guard';
+import { CurrentUser } from '@ecommerce/core/decorator/current-user';
+import { UseGuards } from '@nestjs/common';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { SignUpArgs } from './dto';
 import { MemberService } from './member.service';
 
@@ -9,5 +12,11 @@ export class MemberResolver {
   @Mutation()
   async signUp(@Args() signUpArgs: SignUpArgs) {
     return this.memberService.signUp(signUpArgs)
+  }
+
+  @Query()
+  @UseGuards(AccessAuthGuard)
+  async me(@CurrentUser('user') member) {
+    return this.memberService.me(member.id);
   }
 }

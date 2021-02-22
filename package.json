@@ -21,6 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@fabio.formosa/metamorphosis-nest": "^4.0.2",
     "@nestjs/common": "^7.0.0",
     "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^7.0.0",

@@ -5,6 +5,7 @@ import { MemberService } from './member.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Member } from './entities';
 import { AuthModule } from '@ecommerce/auth/auth.module';
+import { MeConverter } from './converter';
 @Module({
   imports: [
     TypeOrmModule.forFeature([Member]),
@@ -14,7 +15,8 @@ import { AuthModule } from '@ecommerce/auth/auth.module';
     MemberRepository,
     MemberRepositoryProvider,
     MemberResolver,
-    MemberService
+    MemberService,
+    MeConverter,
   ],
   exports: [
     MemberRepository,
