@@ -4,13 +4,13 @@
 
 - `m` signUp
 
-- `m` signUpSeller
-
-- `m` signOut
-
 - `m` login
 
-- `m` logout
+- `m` getAccessToken
+
+- `m` revokeAccessToken
+
+- `m` revokeRefreshToken
 
 - `q` me
 
@@ -26,6 +26,6 @@
 
 - `m` orderProduct
 
-- `m` commentProduct
+- `q` getAllOrder
 
-- `m` reviewProduct
+- `q` getOrder
