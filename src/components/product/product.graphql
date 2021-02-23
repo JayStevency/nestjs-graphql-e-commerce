@@ -1,0 +1,33 @@
+type Product {
+  id: Int
+  name: String
+  price: Int
+  stock: Int
+  details: [ProductDetail]
+  owner: Member
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type ProductDetail {
+  id: Int
+  title: String
+  contents: String
+  ordering: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input InputProductDetail {
+  title: String
+  contents: String
+}
+
+type Mutation {
+  createProduct(
+    name: String!
+    price: Int!
+    stock: Int!
+    details: [InputProductDetail]
+  ): Product
+}

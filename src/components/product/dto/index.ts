@@ -1,0 +1,1 @@
+export { CreateProductArgs } from './create-product.args';

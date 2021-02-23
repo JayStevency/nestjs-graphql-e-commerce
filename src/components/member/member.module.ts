@@ -19,8 +19,7 @@ import { MeConverter } from './converter';
     MeConverter,
   ],
   exports: [
-    MemberRepository,
-    MemberRepositoryProvider
+    MemberRepository
   ]
 })
 export class MemberModule {}

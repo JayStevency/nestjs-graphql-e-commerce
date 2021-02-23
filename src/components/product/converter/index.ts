@@ -1,0 +1,1 @@
+export { CreateProductConverter } from './create-product.converter';

@@ -9,6 +9,7 @@ import { AppService } from './app.service';
 import { TypeOrmConfig } from './core/config/typeorm.config';
 import { AuthModule } from './auth/auth.module';
 import { MemberModule } from './components/member/member.module';
+import { ProductModule } from './components/product/product.module';
 import configuration from './core/config/configuration';
 
 @Module({
@@ -37,6 +38,7 @@ import configuration from './core/config/configuration';
     }),
     AuthModule,
     MemberModule,
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
